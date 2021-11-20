@@ -59,10 +59,10 @@ def predict():
         prediction = model.predict([[male, married_yes, dep, graduate,
                                      employed_yes, ApplicantIncome, LoanAmount]])
         if prediction == "N":
-            prediction_text = "Not Approved"
+            prediction = "Not Approved"
         else:
-            prediction_text = "Approved"
-        return render_template("prediction.html", prediction_text)
+            prediction = "Approved"
+        return render_template("prediction.html", prediction_text = prediction)
 
     else:
         return render_template("prediction.html")
